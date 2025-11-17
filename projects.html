@@ -9,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DT - Group</title>
+    <title>DT - Projects</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -82,10 +85,9 @@
                 Projects
             </div>
 
-            
-
+           
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="projects.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>All Projects</span></a>
@@ -112,9 +114,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -316,51 +320,61 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Create New Group</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Projects</h1>
+                    <p class="mb-4">The following projects exist.</p>
 
-                    <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create a new group</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Name*">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Description*">
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" class="form-control form-control-user" id="exampleInputEmail" > Read
-                                    <input type="checkbox" class="form-control form-control-user" id="exampleInputEmail" > Write
-                                    <input type="checkbox" class="form-control form-control-user" id="exampleInputEmail" > Admin
-                                </div>
-                                <div class="form-group">
-                                    <label>Projects:</label>
-                                    <select class="form-control form-select" multiple aria-label="Multiple select example">
-                                        <option selected>All</option>
-                                        <option value="1">Hawaii</option>
-                                        <option value="2">Helios</option>
-                                    </select>
-                                </div>
-                                <a href="groups.html" class="btn btn-primary btn-user btn-block">
-                                    Create Group
-                                </a>
-                            </form>
-                            
+                    <p>
+                    <a href="add-project.html" class="btn btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-project-diagram"></i>
+                        </span>
+                        <span class="text">Add Project</span>
+                    </a>
+                    </p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                         </div>
-                        <div class="col-lg-2"></div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Website</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Website</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Hawaii</td>
+                                            <td>Lorem ipsum...</td>
+                                            <td>http://lorem.ipusum.org/</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Helios</td>
+                                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet lacus lectus, ac volutpat odio blandit quis. Donec ut velit turpis. Nullam ut elementum urna, eleifend aliquet ipsum. </td>
+                                            <td>https://www.lorem.ups/</td>
+                                            <td></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -418,6 +432,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
